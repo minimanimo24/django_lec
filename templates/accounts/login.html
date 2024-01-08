@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Code</title>
+    <!-- 정적 파일 경로 수정 -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <!-- 정적 파일 경로 수정 -->
+        <a href="{% url 'index' %}"><img src="{% static 'images/LOGO.png' %}" alt="로고"></a>
+    </header>
+    <menu>
+        <button>X</button>
+        <section>
+            <a href="PlayList.html">PlayList</a>
+            <a href="Artists.html">Artists</a>
+            <a href="Musics.html">Musics</a>
+            <a href="Show.html">Show</a>
+            <a href="Codes.html">Codes</a>
+            <a href="Profile.html" class="PF">Profile</a>
+        </section>
+    </menu>
+    <form action="/register" method="post">
+        <label for="username">아이디:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="center-btn">
+            <button type="submit">로그인</button>
+        </div>
+
+        <div class="regist-btn">
+            <a href="Register.html" alt="회원가입">회원가입하기</a>
+        </div>
+    </form>
+    <footer>
+        <div>
+            <p>
+                <br><br>
+                email : menty@comento.com<br><br>
+                address : 서울시 서울구 서울동 서울로 11<br><br>
+                tel : 02-2222-2222<br><br><br>
+            </p>
+        </div>
+    </footer>
+</body>

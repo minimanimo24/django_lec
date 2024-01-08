@@ -1,0 +1,45 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+{% load static%}
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indie Code</title>
+    <!-- 정적 파일 경로 수정 -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <!-- 정적 파일 경로 수정 -->
+        <a href="{% url 'index' %}"><img src="{% static 'images/LOGO.png' %}" alt="로고"></a>
+    </header>
+    <menu>
+        <button>X</button>
+        <section>
+            <a href="PlayList.html">PlayList</a>
+            <a href="Artists.html">Artists</a>
+            <a href="Musics.html">Musics</a>
+            <a href="Show.html">Show</a>
+            <a href="Codes.html">Codes</a>
+            <a href="Profile.html" class="PF">Profile</a>
+        </section>
+    </menu>
+
+    <category>
+        <div class="PL1">
+            <!-- 정적 파일 경로 수정 -->
+            <img src="{% static 'images/PL1.png' %}" alt="플리1">
+        </div>
+        <div class="PL2">
+            <!-- 정적 파일 경로 수정 -->
+            <a><img src="{% static 'images/PL1.png' %}" alt="플리2"></a><!--이미지 교체 필요함-->
+        </div>
+    </category>
+
+    <footer>
+
+    </footer>
+</body>
+</html>
