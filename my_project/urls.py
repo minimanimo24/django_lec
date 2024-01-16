@@ -7,4 +7,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('index.urls')),  # 수정된 부분
     path('accounts/',include('accounts.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]

@@ -24,22 +24,12 @@
             <a href="Profile.html" class="PF">Profile</a>
         </section>
     </menu>
-    <form action="{% url 'accounts:login' %}" method="post">
-    {% csrf_token %}
-        <label for="username">아이디:</label>
-        <input type="text" id="username" name="username" required>
-
-        <label for="password">비밀번호:</label>
-        <input type="password" id="password" name="password" required>
-
-        <div class="center-btn">
-            <button type="submit">로그인</button>
-        </div>
-
-        <div class="regist-btn">
-            <a href="{% url 'accounts:signup' %}" alt="회원가입">회원가입하기</a>
-        </div>
-    </form>
+    {% if user.is_authenticated %}
+     <li class="nav-item"><a class="nav-link" href="{% url
+        'accounts:logout' %}">{{ user.username }} (logout)</a></li>
+     {% else %}
+        <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}">login</a></li>
+     {% endif %}
     <footer>
         <div>
             <p>

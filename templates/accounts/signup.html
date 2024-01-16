@@ -1,3 +1,5 @@
+<!-- index.html -->
+
 <!DOCTYPE html>
 {% load static%}
 <html lang="ko">
@@ -24,30 +26,17 @@
             <a href="Profile.html" class="PF">Profile</a>
         </section>
     </menu>
-    <form action="{% url 'accounts:login' %}" method="post">
-    {% csrf_token %}
-        <label for="username">아이디:</label>
-        <input type="text" id="username" name="username" required>
 
-        <label for="password">비밀번호:</label>
-        <input type="password" id="password" name="password" required>
+    {% block content %}
+     <form method="post">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <button type="submit">Sign Up</button>
+     </form>
+    {% endblock %}
 
-        <div class="center-btn">
-            <button type="submit">로그인</button>
-        </div>
-
-        <div class="regist-btn">
-            <a href="{% url 'accounts:signup' %}" alt="회원가입">회원가입하기</a>
-        </div>
-    </form>
     <footer>
-        <div>
-            <p>
-                <br><br>
-                email : menty@comento.com<br><br>
-                address : 서울시 서울구 서울동 서울로 11<br><br>
-                tel : 02-2222-2222<br><br><br>
-            </p>
-        </div>
+
     </footer>
 </body>
+</html>
